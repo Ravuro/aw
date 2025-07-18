@@ -1,0 +1,596 @@
+/* assets/css/style.css */
+
+/* Değişkenler: Sitenin renk paletini ve temel ayarlarını buradan yönetiyoruz. */
+:root {
+    --orange: #ff6600;
+    --dark-orange: #e65c00;
+    --black-primary: #0d0d0d;
+    --black-secondary: #1a1a1a;
+    --gray: #2c2c2c;
+    --text-color: #f0f0f0;
+    --text-muted: #a0a0a0;
+}
+
+/* Genel Sıfırlama ve Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--black-primary);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header & Navigasyon Menüsü */
+.main-header {
+    background-color: var(--black-secondary);
+    border-bottom: 1px solid var(--gray);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--orange);
+}
+
+/* Profil Alanı & Steam Butonu */
+.profile-area .btn-steam {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.profile-area .btn-steam:hover {
+    background-color: #2c3e50;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+}
+
+.profile-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--black-secondary);
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 10px;
+    margin-top: -10px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-muted);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--gray);
+    color: var(--orange);
+}
+
+/* Ana İçerik Alanı */
+main {
+    padding: 3rem 0;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* Footer (Alt Kısım) */
+.main-footer {
+    background-color: var(--black-secondary);
+    border-top: 1px solid var(--gray);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--orange);
+}
+
+/* Genel Buton Stili */
+.btn {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Profil Sayfası Stilleri */
+.profile-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: flex-start;
+}
+
+.profile-card {
+    flex: 0 0 300px;
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--gray);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--orange);
+    margin-bottom: 1rem;
+}
+
+.profile-card h2 {
+    margin-bottom: 1rem;
+}
+
+.profile-content {
+    flex-grow: 1;
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.profile-content h3 {
+    color: var(--orange);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Mağaza Sayfası Stilleri */
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    border-left: 4px solid var(--orange);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.vehicle-card {
+    background-color: var(--black-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--gray);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.vehicle-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: var(--black-primary);
+}
+
+.vehicle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vehicle-details {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vehicle-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.vehicle-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--orange);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.btn-buy {
+    background-color: var(--orange);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn-buy:hover {
+    background-color: var(--dark-orange);
+}
+
+/* Onay Modalı Stilleri */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Varsayılan olarak gizli */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-title {
+    color: var(--orange);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.modal-item-info {
+    background-color: var(--black-primary);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    border: 1px solid var(--gray);
+}
+
+.modal-item-info strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-item-info span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.modal-actions .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.btn-cancel {
+    background-color: var(--gray);
+    color: var(--text-color);
+}
+
+.btn-cancel:hover {
+    background-color: #444;
+}
+
+.btn-confirm {
+    background-color: var(--orange);
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: var(--dark-orange);
+}
+
+/* Yüklenme Spinner'ı */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: var(--orange);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Özel Bildirim Kutusu (Alert) */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: -400px; /* Başlangıçta ekran dışında */
+    width: 350px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: right 0.5s ease-in-out;
+    z-index: 3000;
+    border-left: 5px solid;
+}
+
+.custom-alert.show {
+    right: 20px; /* Ekrana girer */
+}
+
+.alert-success {
+    background-color: #2f3640;
+    border-left-color: #2ecc71; /* Yeşil */
+}
+
+.alert-error {
+    background-color: #2f3640;
+    border-left-color: #e74c3c; /* Kırmızı */
+}
+
+/* Profil Sayfası Satın Alım Geçmişi Tablosu */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.purchase-history-table {
+    width: 100%;
+    border-collapse: collapse; /* Kenarlıkların birleşmesini sağlar */
+    margin-top: 1rem;
+}
+
+.purchase-history-table th,
+.purchase-history-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray);
+}
+
+.purchase-history-table th {
+    background-color: var(--black-primary);
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.purchase-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.purchase-history-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.purchase-history-table tbody tr:hover {
+    background-color: var(--gray);
+}
+
+/* Durum etiketleri için stiller */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-delivered {
+    background-color: rgba(46, 204, 113, 0.1); /* Yeşil tonu */
+    color: #2ecc71;
+}
+
+.status-pending {
+    background-color: rgba(243, 156, 18, 0.1); /* Turuncu tonu */
+    color: #f39c12;
+}
+
+/* Duyuru Sayfası Stilleri */
+.announcements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.announcement-card {
+    background-color: var(--black-secondary);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.announcement-title {
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+}
+
+.announcement-meta {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1rem;
+}
+
+.announcement-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.announcement-content {
+    line-height: 1.8;
+}
+
+/* Başvuru Sayfası Stilleri */
+.application-form {
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.application-form .form-group label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.application-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    background-color: var(--black-primary);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: var(--orange);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+}
+.btn-submit:hover {
+    background-color: var(--dark-orange);
+}
+
+/* Form Mesajları */
+.form-message {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.form-message.success { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid #2ecc71; }
+.form-message.error { background-color: rgba(231, 76, 60, 0.2); color: #e74c3c; border: 1px solid #e74c3c; }
+.form-message.pending { background-color: rgba(243, 156, 18, 0.2); color: #f39c12; border: 1px solid #f39c12; }
+.form-message.info { background-color: rgba(52, 152, 219, 0.2); color: #3498db; border: 1px solid #3498db; }

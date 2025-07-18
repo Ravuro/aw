@@ -1,0 +1,310 @@
+/* assets/css/admin_style.css */
+
+body {
+    background-color: #212121 !important; /* Admin paneli için biraz daha açık bir arkaplan */
+}
+
+.admin-header {
+    background-color: var(--black-secondary);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--orange);
+}
+
+.admin-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header .logo a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.admin-header .logo span {
+    color: var(--orange);
+}
+
+.admin-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.admin-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.admin-nav a:hover {
+    color: var(--orange);
+}
+
+.admin-main-content {
+    padding: 2rem 0;
+}
+
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1rem;
+}
+
+.admin-page-title {
+    font-size: 2rem;
+    color: var(--orange);
+    margin: 0;
+}
+
+/* Genel Butonlar */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+.btn-success { background-color: #2ecc71; color: white; }
+.btn-success:hover { background-color: #27ae60; }
+.btn-edit { background-color: #3498db; color: white; }
+.btn-edit:hover { background-color: #2980b9; }
+.btn-delete { background-color: #e74c3c; color: white; }
+.btn-delete:hover { background-color: #c0392b; }
+.btn-cancel { background-color: var(--gray); color: var(--text-color); }
+.btn-cancel:hover { background-color: #444; }
+
+
+/* Tablo Stilleri */
+.table-responsive { overflow-x: auto; }
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--black-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.admin-table th, .admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray);
+}
+.admin-table thead { background-color: var(--black-primary); }
+.admin-table th { color: var(--orange); font-weight: 600; }
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background-color: var(--gray); }
+.table-image { width: 100px; height: auto; border-radius: 5px; }
+.admin-table .actions { display: flex; gap: 0.5rem; }
+.admin-table .actions .btn { padding: 0.5rem; font-size: 0.9rem; }
+
+/* Durum Etiketleri */
+.status { padding: 5px 10px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
+.status-active { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.status-passive { background-color: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+.status-delivered { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.status-pending { background-color: rgba(243, 156, 18, 0.2); color: #f39c12; }
+
+
+/* Form Stilleri */
+.admin-form {
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    background-color: var(--black-primary);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.form-group-checkbox { display: flex; align-items: center; gap: 0.5rem; }
+.form-actions { margin-top: 2rem; }
+
+/* Hata Mesajları */
+.admin-error {
+    background-color: #e74c3c;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Filtreleme ve Arama Formu */
+.admin-filters {
+    background-color: var(--black-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.admin-filters form {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-filters input[type="text"] {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    background-color: var(--black-primary);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Dashboard İstatistik Kartları */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat-card {
+    background-color: var(--black-secondary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid var(--gray);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Dashboard Son Aktiviteler */
+.recent-activity {
+    margin-top: 3rem;
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1rem;
+}
+
+.recent-activity ul {
+    list-style: none;
+}
+
+.recent-activity li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.recent-activity li:last-child {
+    border-bottom: none;
+}
+
+.activity-user {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.activity-item {
+    font-weight: 600;
+    color: var(--orange);
+}
+
+.activity-price {
+    font-weight: 600;
+    color: #2ecc71; /* Yeşil */
+}
+
+.activity-action {
+    color: var(--text-muted);
+}
+
+/* Başvuru Yönetimi Stilleri */
+.status-onaylandı { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.status-reddedildi { background-color: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+.status-bekliyor { background-color: rgba(243, 156, 18, 0.2); color: #f39c12; }
+
+.application-details {
+    background-color: var(--black-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.question-block {
+    margin-bottom: 2rem;
+}
+
+.question-block h3 {
+    color: var(--orange);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.question-block p {
+    background-color: var(--black-primary);
+    padding: 1rem;
+    border-radius: 5px;
+    line-height: 1.8;
+}
+
+.application-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray);
+    display: flex;
+    gap: 1rem;
+}
